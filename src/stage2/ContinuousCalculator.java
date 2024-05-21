@@ -1,15 +1,30 @@
 package stage2;
 
+/**
+ * The ContinuousCalculator class manages the main loop of the calculator,
+ * processing user inputs and performing calculations.
+ */
 class ContinuousCalculator {
     private static final String EXIT_COMMAND = "/exit";
     private final Calculator calculator;
     private final InputHandler inputHandler;
+
+    /**
+     * Initializes a new ContinuousCalculator with a Calculator and an InputHandler.
+     *
+     * @param calculator the Calculator to use for arithmetic operations
+     * @param inputHandler the InputHandler to use for reading user input
+     */
 
     public ContinuousCalculator(Calculator calculator, InputHandler inputHandler) {
         this.calculator = calculator;
         this.inputHandler = inputHandler;
     }
 
+    /**
+     * Starts the main loop of the calculator, continuously reading user inputs,
+     * performing calculations, and handling special commands.
+     */
     public void run() {
         while (true) {
             String input = inputHandler.getInput();
